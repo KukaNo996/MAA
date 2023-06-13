@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#00BFFF">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_fywy" />
+
+        <TextView
+            android:id="@+id/id_textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="祝赏"
+            android:textColor="#FFF"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/loginout"
+            android:layout_width="80dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="退出登录"
+            android:textColor="#FFF"
+            android:background="#0000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="Loginout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:drawableLeft="@drawable/ic_setting"
+        android:gravity="center_vertical"
+        android:background="#0000"
+        android:onClick="Setting"
+        android:text="设置"
+        android:textColor="#2C2C2C"
+        android:textSize="20sp"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/updata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#0000"
+        android:drawableLeft="@drawable/ic_updata"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="更新"
+        android:textColor="#2C2C2C"
+        android:textSize="20sp"
+        android:onClick="Updata"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/collect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:drawableLeft="@drawable/ic_sc"
+        android:gravity="center_vertical"
+        android:text="收藏"
+        android:textColor="#2C2C2C"
+        android:textSize="20sp"
+        android:onClick="Collect"
+        android:background="#0000"
+        tools:ignore="OnClick" />
+    <Button
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:drawableLeft="@drawable/ic_about"
+        android:gravity="center_vertical"
+        android:text="关于"
+        android:textColor="#2C2C2C"
+        android:textSize="20sp"
+        android:onClick="About"
+        android:background="#0000"
+        tools:ignore="OnClick"/>
+</LinearLayout>

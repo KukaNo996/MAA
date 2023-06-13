@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    tools:context=".HomeActivity">
+    <LinearLayout
+        android:id="@+id/id_tab1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButtontab1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:onClick="doHomePage"
+            app:srcCompat="@drawable/ic_home_true"
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:id="@+id/textViewtab1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="主页"
+            android:textColor="@color/BarTrue"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButtontab2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:onClick="doNewsPage"
+            app:srcCompat="@drawable/ic_gg_false"
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:id="@+id/textViewtab2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="公告" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButtontab3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:onClick="doMyPage"
+            app:srcCompat="@drawable/ic_my_false"
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:id="@+id/textViewtab3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="我的" />
+    </LinearLayout>
+</LinearLayout>
