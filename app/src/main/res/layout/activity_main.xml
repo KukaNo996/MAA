@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
+    <include layout="@layout/title_darkactionbar"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -112,6 +112,7 @@
             android:layout_height="wrap_content"
             android:onClick="doLogin"
             android:layout_margin="5dp"
+            android:background="@drawable/btn_l"
             android:text="登录" />
 
         <Button
@@ -120,6 +121,7 @@
             android:layout_height="wrap_content"
             android:onClick="doRegister"
             android:layout_margin="5dp"
+            android:background="@drawable/btn_r"
             android:text="退出" />
 
     </LinearLayout>
