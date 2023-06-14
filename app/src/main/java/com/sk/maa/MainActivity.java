@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
     private Retrofit retrofit ;
     private ApiService apiService ;
-    public static String Token;
     private String UUID;
     private Handler mHandler = new Handler(Looper.myLooper()){
         @Override
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void InitData() {
         retrofit = new Retrofit.Builder()
-                .baseUrl(ApiService.BASE_URL)
+                .baseUrl(Gloabl.i.baseurl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         apiService = retrofit.create(ApiService.class);
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                             Gson gson=new Gson();
                             ResultLoginData resultData = gson.fromJson(body.string(), ResultLoginData.class);
                             if (resultData != null && resultData.getCode() == 200){
-                                Token = resultData.getToken();
+                                Gloabl.i.token = resultData.getToken();
                                 Message msg = new Message();
                                 msg.what = resultData.getCode();
                                 msg.obj = resultData.getMsg();
@@ -179,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void LoginFail(Object msg) {
         Toast.makeText(this, msg.toString(), Toast.LENGTH_SHORT).show();
+        id_code.setText("");
+        doRefresh(ib_code);
     }
 
     public void doLogin(View view) {

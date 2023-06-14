@@ -54,8 +54,8 @@ public class MyFragment extends Fragment {
                 Intent intent = null;
                 switch (position){
                     case 0:
-//                        intent = new Intent(view.getContext(),SettingActivity.class);
-//                        startActivity(intent);
+                        intent = new Intent(view.getContext(), DeclassifyActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
 //                        intent = new Intent(view.getContext(),InformationActivity.class);
