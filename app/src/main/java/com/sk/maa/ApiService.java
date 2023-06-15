@@ -26,5 +26,8 @@ public interface ApiService {
     @GET("system/notice/list")
     Call<ResponseBody> notice(@HeaderMap Map<String, String> headers,
                               @QueryMap HashMap<String, Integer> content);
+    @GET("/getInfo")
+    Call<ResponseBody> userInfo(@HeaderMap Map<String, String> headers);
+
 }
 
