@@ -89,7 +89,7 @@
             android:layout_marginLeft="20dp"
             android:text="邮箱"/>
         <EditText
-            android:id="@+id/id_new_pwd"
+            android:id="@+id/id_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"

@@ -26,8 +26,13 @@ public interface ApiService {
     @GET("system/notice/list")
     Call<ResponseBody> notice(@HeaderMap Map<String, String> headers,
                               @QueryMap HashMap<String, Integer> content);
-    @GET("/getInfo")
+    @GET("getInfo")
     Call<ResponseBody> userInfo(@HeaderMap Map<String, String> headers);
-
+    @PUT("system/user/profile")
+    Call<ResponseBody> updateUserInfo(@HeaderMap Map<String, String> headers,
+                                      @Body RequestBody body);
+    @GET("schedule/stype/list")
+    Call<ResponseBody> PGItem(@HeaderMap Map<String, String> headers,
+                              @QueryMap HashMap<String, Integer> content);
 }
 

@@ -6,7 +6,7 @@
     android:background="@color/colorPrimaryDark"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    tools:context=".InformationActivity">
+    tools:context=".MPIActivity">
     <LinearLayout
         android:layout_width="48dp"
         android:layout_height="48dp"

@@ -70,7 +70,6 @@ public class NewsFragment extends Fragment {
     private void InitView() {
         listView = view.findViewById(R.id.id_listview_news);
         myAdapter = new MyAdapter();
-        getNoticeLink(1,10);
         listView.setAdapter(myAdapter);
     }
     private void InitData() {
@@ -79,6 +78,7 @@ public class NewsFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         apiService = retrofit.create(ApiService.class);
+        getNoticeLink(1,10);
     }
 
     private void noticeInit() {
@@ -160,7 +160,12 @@ public class NewsFragment extends Fragment {
             ImageView imageView = convertView.findViewById(R.id.id_icon);
             TextView textView = convertView.findViewById(R.id.id_text);
 
-            imageView.setImageDrawable(getResources().getDrawable(R.drawable.baseline_error_24));
+            if (item.getNoticeType().equals("1")){
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_tz));
+            }else {
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_gg));
+            }
+
             textView.setText(item.getNoticeTitle().toString());
             return convertView;
         }

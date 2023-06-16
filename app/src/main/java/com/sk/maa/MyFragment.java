@@ -58,8 +58,8 @@ public class MyFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case 1:
-//                        intent = new Intent(view.getContext(),InformationActivity.class);
-//                        startActivity(intent);
+                        intent = new Intent(view.getContext(),MPIActivity.class);
+                        startActivity(intent);
                         break;
                     case 2:
 //                        startActivity(new Intent());
