@@ -8,4 +8,5 @@
     <color name="blue">#00BFFF</color>
     <color name="BarFalse">#8A8A8A</color>
     <color name="BarTrue">#1296db</color>
+    <color name="Check">#808080</color>
 </resources>

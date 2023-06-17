@@ -12,6 +12,7 @@ import retrofit2.http.HeaderMap;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 
 public interface ApiService {
@@ -34,5 +35,8 @@ public interface ApiService {
     @GET("schedule/stype/list")
     Call<ResponseBody> PGItem(@HeaderMap Map<String, String> headers,
                               @QueryMap HashMap<String, Integer> content);
+    @GET("schedule/stype/listSite/{type}")
+    Call<ResponseBody> SiteInfoItem(@HeaderMap Map<String, String> headers,
+                                    @Path("type") Integer type);
 }
 
