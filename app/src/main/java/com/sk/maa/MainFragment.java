@@ -1,6 +1,7 @@
 package com.sk.maa;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -102,6 +103,18 @@ public class MainFragment extends Fragment {
             }
         });
         id_right.setAdapter(rightAdapter);
+        id_right.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SiteInfo siteInfo = siteInfoItems.get(position);
+                int siteId = siteInfo.getId();
+                String address = siteInfo.getAddress();
+                Intent intent = new Intent(view.getContext(), SiteActivity.class);
+                intent.putExtra("siteId",siteId);
+                intent.putExtra("address", address);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getPGItemLink(Integer pageNum, Integer pageSize) {
