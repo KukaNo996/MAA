@@ -65,8 +65,9 @@ public class SiteActivity extends AppCompatActivity {
     }
 
     private void SubmitSuccess(Object obj) {
-        Toast.makeText(this, ""+obj, Toast.LENGTH_SHORT).show();
-        finish();
+        if (obj.equals("预约成功")) {
+            Toast.makeText(this, ""+obj, Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -185,6 +186,8 @@ public class SiteActivity extends AppCompatActivity {
                             Gson gson=new Gson();
                             ResultData resultData = gson.fromJson(body.string(), ResultData.class);
                             if (resultData != null && resultData.getCode() == 200){
+                                getSiteReservationInfoLink(siteId);
+                                maaData.clear();
                                 Message msg = new Message();
                                 msg.what = resultData.getCode();
                                 msg.obj = resultData.getMsg();
