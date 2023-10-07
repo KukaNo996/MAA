@@ -47,6 +47,7 @@ public class MainFragment extends Fragment {
     private static ArrayList<PGItem> pgItems = new ArrayList<>();
     private static ArrayList<SiteInfo> siteInfoItems = new ArrayList<>();
     private static ArrayList<Integer> siteIds = new ArrayList<>();
+    private static int siteId = 1;
     private Retrofit retrofit ;
     private ApiService apiService ;
     private Handler mHandler = new Handler(Looper.myLooper()){
@@ -66,6 +67,13 @@ public class MainFragment extends Fragment {
 
     private void LinkSuccess(Object obj) {
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getPGItemLink(1,10);
+        getSiteInfoItemLink(siteId);
     }
 
     private void LinkFail(Object obj) {
@@ -88,7 +96,7 @@ public class MainFragment extends Fragment {
                 .build();
         apiService = retrofit.create(ApiService.class);
         getPGItemLink(1,10);
-        getSiteInfoItemLink(1);
+        getSiteInfoItemLink(siteId);
     }
     private void InitView() {
         id_left = view.findViewById(R.id.id_left);
@@ -99,6 +107,7 @@ public class MainFragment extends Fragment {
         id_left.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                siteId = position+1;
                 getSiteInfoItemLink(position+1);
             }
         });

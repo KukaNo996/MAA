@@ -379,4 +379,8 @@ public class SiteActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void OnRefresh(View view) {
+        InitView();
+    }
 }
